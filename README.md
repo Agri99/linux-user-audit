@@ -25,15 +25,17 @@ This is a lightweight Python script to audit local Linux user accounts and passw
 1. Clone the repository:
 '''bash
 
->git clone
->https://github.com/Agri99/linux-user-audit.git
+>git clone https://github.com/Agri99/linux-user-audit.git
+
 >cd linux-user-audit
 
 3. (Optional but recomended) Set up a virtual environment:
 '''bash
 
 >python -m venv
+
 >.\venv\Scripts\activate # On Windows
+
 >Source /venv/Script/activate # On Linux
 
 4. Install Required Libraries:
