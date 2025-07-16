@@ -38,12 +38,7 @@ This is a lightweight Python script to audit local Linux user accounts and passw
 
 >Source /venv/Script/activate # On Linux
 
-4. Install Required Libraries:
-'''bash
-
->pip install -r requirenments.txt
-
-5. Run the script:
+4. Run the script:
 '''bash
 
 >sudo python audit.py
@@ -55,22 +50,23 @@ Starting Linux User Audit...
 
 Found 3 non-system users
 
-=== User Audit Report ===
-
-User Audit Report:
-----------------------------------------
+=== User Audit Report ===                                                                                           
+----------------------------------------                                                                            
 [+] root: OK
+
 [+] nobody: OK
+
 [+] kali: OK
 
 
-=== Password Audit Report ===
-
-Password Audit Report:
-----------------------------------------
+=== Password Audit Report ===                                                                                       
+----------------------------------------                                                                            
 [!] root: No valid password set
+
 [!] nobody: No valid password set
+
 [!] kali: No valid password set
+
 
 
 ## Author
