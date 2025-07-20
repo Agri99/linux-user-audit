@@ -6,10 +6,13 @@ This is a lightweight Python script to audit local Linux user accounts and passw
 ## Features
 - Scans /etc/passwd for:
 	> Non-root users with UID 0 (dangerous misconfiguration)
+
 	> System accounts with login shells enabled
+
 	> User with sudo privilages
 - Scans /etc/shadow for:
 	> Accounts without passwords
+
 	> Password Encryption Type
 - Skip system accounts (UID < 1000), exept for root
 
