@@ -7,10 +7,10 @@ This is a lightweight Python script to audit local Linux user accounts and passw
 - Scans /etc/passwd for:
 	> Non-root users with UID 0 (dangerous misconfiguration)
 	> System accounts with login shells enabled
+	> User with sudo privilages
 - Scans /etc/shadow for:
 	> Accounts without passwords
-	> Locked system accounts
-	> Invalid password field formats
+	> Password Encryption Type
 - Skip system accounts (UID < 1000), exept for root
 
 ---
@@ -46,9 +46,10 @@ This is a lightweight Python script to audit local Linux user accounts and passw
 ---
 
 # Sample Output
+
 Starting Linux User Audit...
 
-Found 3 non-system users
+Found 4 non-system users
 
 === User Audit Report ===                                                                                           
 ----------------------------------------                                                                            
@@ -58,15 +59,38 @@ Found 3 non-system users
 
 [+] kali: OK
 
+[!] usertest1: Login shell enabled
+
+
+[+] Auditing user with sudo privilages...
+
+[!] Users with sudo privilages:
+
+     - kali
+
+     - root
+
+
+Users with UID 0 (root privilages):
+
+     - root
+
+
 
 === Password Audit Report ===                                                                                       
 ----------------------------------------                                                                            
-[!] root: No valid password set
+[+] User Password Encryption:
 
-[!] nobody: No valid password set
+User: root -> Method: Locked/Invalid -> Strength: Not Usable
 
-[!] kali: No valid password set
+User: kali -> Method: yescrypt -> Strength: Very Strong
 
+User: usertest1 -> Method: MD5 -> Strength: Weak
+
+
+## Version
+- v1.0 -> Scanning non-root users with UID 0, accounts with login shell enabled
+- v1.1 -> Added feature to scan users with sudo privilages, accounts without password and password encryption type
 
 
 ## Author
